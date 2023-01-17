@@ -36,13 +36,13 @@ jobs:
 
     - name: Build Docker Image
       env: 
-        NEW_VERSION: ${{ steps.vesion.outputs.version }}
+        NEW_VERSION: ${{ steps.version.outputs.version }}
       run: |
         docker build -t martinruizcl/docker-graphql:$NEW_VERSION .
 
     - name: Push Docker Image
       env:
-        NEW_VERSION: ${{ steps.vesion.outputs.version }}
+        NEW_VERSION: ${{ steps.version.outputs.version }}
       run: |
         docker push martinruizcl/docker-graphql:$NEW_VERSION
 
